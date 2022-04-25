@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>app跳转</title>
+</head>
+<body>
+ <button onclick="lanchApp()">唤醒app</button>
+</body>
+<script type="text/javascript">
+	function lanchApp() {
+		// body...
+		alert("即将跳转");
+		//scheme://host:端口/path
+		//<a href="caishilive://caishi:8080/loadtooldetail?tool_id=100">打开APP工具详情页</a>
+		window.location.href="http://bocichina.com/bci_path?id=0";
+	}
+</script>
+</html>
