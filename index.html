@@ -2,122 +2,82 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,target-densitydpi = medium-dpi">
-    <title>Document</title>
-    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习1.0</title>
     <style>
         *{
             margin: 0px;
             padding: 0px;
         }
+
         html {
-            height: 100%;
             width: 100%;
-            display: flex;
+            height: 100%;
         }
         body {
-            width: 100%; 
-            min-height: 100%;
-            /* height: 100%; */
             display: flex;
-            background-color: #ccc;
+            height: 100%;
             flex-direction: column;
         }
+
         .header {
-            display: flex;
-            height: 50px;
-            background-color: #666;
             width: 100%;
-            justify-content: center;
-            align-items: center;
-        }
-        .content {
-            /* 内容填充满 */
-            flex: 1;   
-            width: 100%; 
-            height: 100%;  
-            display: flex;     
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;  
-        }
-        .silder {
-            display: flex;   
-            width: 170px; 
-            height: 100%;
-            justify-content: center;
-            align-items: center;
+            height: 50px;
+            color: white;
             background-color: blue;
-            color: white;
-            font-size: 50px;
-           
         }
-        .rightcontent { 
-            background-color: green;
+
+        .content {
             width: 100%;
-            display: flex;    
-            height: 100%;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 50px;
-        }
-        .bottom {
-            height: 50px;
             background-color: orange;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
+            flex: 1;
         }
-        .tabbaritme {
+
+        .bottom {
+             width: 100%;
+            height: 50px;
+            color: white;
+            background-color: blue;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
         }
-        .home {
+
+        .bottom p {
+            width: 100%;
+            height: 100%;
             color: red;
+            font-size: 20px ;
+        
         }
+
     </style>
 </head>
 <body>
-    <div class="header"><p>header</p></div>
-    <div class="content">
-        <div class="silder"><p>sidder</p></div>
-        <div class="rightcontent"><p>content</p></div>
+    <div class="header">
+        <p>学习demo</p>
     </div>
-    <div class="bottom" id="tabbar">
-        <div class="tabbaritme home" data-value="1">
-            <p class="hometitle">首页</p>
-            <i class="iconfont icon-shouye"></i>
-            <!-- <img src="" alt="" class="homeImg"> -->
-        </div>
-        <div class="tabbaritme hq" data-value="2">
-            <p class="hqtitle">行情</p>
-            <i class="iconfont icon-hangqing"></i>
-        </div> 
-        <div class="tabbaritme zx">
-            <p class="hometitle">资讯</p>
-            <i class="iconfont icon-shouye"></i>
-            <!-- <img src="" alt="" class="homeImg"> -->
-        </div>
-        <div class="tabbaritme jy">
-            <p class="hqtitle">交易</p>
-            <i class="iconfont icon-hangqing"></i>
-        </div> 
-        <div class="tabbaritme wd">
-            <p class="hqtitle">我的</p>
-            <i class="iconfont icon-hangqing"></i>
-        </div> 
+    <div class="content" id="content">
+
+    </div>
+    <div class="bottom">
+        <p> 声明：代码只是用来学习</p>
     </div>
 
     <script>
-        var bottom = document.getElementById('tabbar');
-        bottom.addEventListener('click',function(e){
-            alert("a");
-            console.log(e);
+        var content = document.getElementById('content');
+        var arrLink = ['https://testappuat.bocichina.com','https://testappuat.bocichina.com/forh5/html/empd_wdcc.html','https://testappuat.bocichina.com/app/html/empd_wdcc.html','https://www.baidu.com'];
+        arrLink.forEach(element => {
+            var firstLink = document.createElement('a');
+            firstLink.href=element;
+            firstLink.innerHTML='点击跳转:' + firstLink.href;
+            content.appendChild(firstLink);
+
+            var br = document.createElement('br');
+            content.appendChild(br);
+            
         });
+        
     </script>
 </body>
 </html>
